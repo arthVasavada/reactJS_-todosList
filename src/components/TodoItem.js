@@ -5,7 +5,7 @@ const TodoItem = ({todo,onDelete}) => {
     <div>
         <h4>{todo.title}</h4>
         <h4>{todo.desc}</h4>
-        <button className="btn btn-sm btn-danger my-1" onClick={()=>{onDelete(todo)}}>Delete</button> {/*we have passed the func rather than calling it*/}
+        <button className="btn btn-sm btn-danger my-3" onClick={()=>{onDelete(todo)}}>Delete</button> {/*we have passed the func rather than calling it*/}
     </div>
   )
 }

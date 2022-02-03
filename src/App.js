@@ -3,13 +3,18 @@ import './App.css';
 import Header from './components/Header';  //importing functions from different component files
 import Todos from './components/Todos'; 
 import Footer from './components/Footer'; 
+import React, { useState } from 'react';
 
 function App() {
   const onDelete = (todo) =>{
-    console.log("In waiting for deletion of todo", todo);
+    console.log("Deleted Successfully", todo);
+
+    setTodos(todos.filter((e) =>{
+      return e!==todo;
+    }))
   }
 
-  let todos = [
+  const [todos, setTodos] = useState([
     {
       sno: 1,
       title: "Buy vegetables",
@@ -25,7 +30,7 @@ function App() {
       title: "Refill petrol",
       desc: "Go to pump and refill petrol"
     }
-  ]
+  ])
   return (
       <><Header title="My Todos List"  searchBar={false}/>   {/* Declaring Props */}   
       <Todos todos={todos} onDelete={onDelete}/>
